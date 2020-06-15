@@ -1,0 +1,14 @@
+{
+  "name": "Schemarama",
+  "version": "0.0.1",
+  "description": "Choose a base color from a native hue from 12 core colors and a color scheme. Depending on the color scheme, additional base colors are be generated.",
+  "main": "code.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
+  "author": "",
+  "license": "GPL 3.0",
+  "dependencies": {
+    "@figma/plugin-typings": "^1.15.0"
+  }
+}
