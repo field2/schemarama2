@@ -26,20 +26,15 @@ function clone(val) {
     }
     throw 'unknown';
 }
-// Calls to "parent.postMessage" from within the HTML page will trigger this
-// callback. The callback will be passed the "pluginMessage" property of the
-// posted message.
 figma.ui.onmessage = msg => {
     if (msg.type === 'create-swatches') {
-        // const nodes: SceneNode[] = [];
         const newSelection = [];
         for (let i = 0; i < msg.count; i++) {
             const rect = figma.createRectangle();
-            const fills = clone(rect.fills);
-            rect.x = i * 100;
-            rect.y = i * 100;
-            // fills[i].color.r = i * 10;
-            rect.fills = fills;
+            newSelection.push(rect);
+            // const fills = clone(rect.fills);
+            newSelection[i].x = i * 100;
+            // rect.fills = fills;
             rect.fills = [{ type: 'SOLID', color: { r: 1, g: 0.5, b: 0 } }];
             figma.currentPage.appendChild(rect);
             newSelection.push(rect);

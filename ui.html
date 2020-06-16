@@ -1,4 +1,4 @@
-/* Styles */
+<!-- styles -->
 <style>
 		* {
   padding: 0;
@@ -189,8 +189,7 @@ label {
   }
 }
 </style>
-
-/* HTML */
+<!-- html -->
 <div>
   <h2 id="choose_a_color">1. Choose a base color</h2>
   <color_wheel>
@@ -227,8 +226,7 @@ label {
     <palette id="alt_2"></palette>
   </palettes>
 </div>
-
-/* Scripts */
+<!-- scripts -->
 <script>
 	/* JQuery */
 	/*! jQuery v3.5.1 -ajax,-ajax/jsonp,-ajax/load,-ajax/script,-ajax/var/location,-ajax/var/nonce,-ajax/var/rquery,-ajax/xhr,-manipulation/_evalUrl,-deprecated/ajax-event-alias,-effects,-effects/Tween,-effects/animatedSelector | (c) JS Foundation and other contributors | jquery.org/license */
@@ -398,12 +396,12 @@ function update_color_wheel(base_color) {
   }
 }
 
+// pass on the number of swatches
+
+
 // generate the figma swatches
 document.getElementById('generate').onclick = () => {
-  // const textbox = document.getElementById('count');
-  // const count = parseInt(textbox.value, 10);
-  // alert("yo");
-    const count = 13;
+    const count = $('swatch').length;
 
     parent.postMessage({ pluginMessage: { type: 'create-swatches', count } }, '*')
 }
