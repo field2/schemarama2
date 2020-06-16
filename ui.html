@@ -402,8 +402,8 @@ function update_color_wheel(base_color) {
 // generate the figma swatches
 document.getElementById('generate').onclick = () => {
     const count = $('swatch').length;
-
-    parent.postMessage({ pluginMessage: { type: 'create-swatches', count } }, '*')
+const fillColor = 'r: .4, g: 0.5, b: .3';
+    parent.postMessage({ pluginMessage: { type: 'create-swatches', count, fillColor } }, '*')
 }
 
 // generate the palette swatches

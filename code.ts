@@ -27,19 +27,22 @@ function clone(val) {
 
 figma.ui.onmessage = msg => {
 	if (msg.type === 'create-swatches') {
-		const newSelection = [];
+		// alert(fillColor)
+		const swatches = [];
 		for (let i = 0; i < msg.count; i++) {
-			const rect = figma.createRectangle();
-			newSelection.push(rect)
-			// const fills = clone(rect.fills);
-			newSelection[i].x = i * 100;
-			// rect.fills = fills;
-			rect.fills = [{type: 'SOLID', color: {r: 1, g: 0.5, b: 0}}];
-			figma.currentPage.appendChild(rect);
-			newSelection.push(rect);
+			const swatch = figma.createRectangle();
+			// const fillColor = msg.fillColor
+swatch.resizeWithoutConstraints(20,20)
+			swatches.push(swatch)
+			const fills = clone(swatch.fills);
+			swatch.x = i * 20;
+			// swatch.fills = fills;
+			swatch.fills = [{type: 'SOLID', color: {r: .4, g: 0.5, b: .3}}];
+			figma.currentPage.appendChild(swatch);
+			swatches.push(swatch);
 		}
-		figma.currentPage.selection = newSelection;
-		figma.viewport.scrollAndZoomIntoView(newSelection);
+		// figma.currentPage.selection = swatches;
+		// figma.viewport.scrollAndZoomIntoView(swatches);
 	}
 
 	// Make sure to close the plugin when you're done. Otherwise the plugin will
