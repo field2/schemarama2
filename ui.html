@@ -1,192 +1,197 @@
 <!-- styles -->
 <style>
-		* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
 }
 
-
+html,
+body {
+	width: 100%;
+	height: 100vh;
+}
 
 body {
-  display: flex;
-  font-family: sans-serif;
-  justify-content: center;
-  background: #999;
-  color: #555;
+	display: flex;
+	font-family: sans-serif;
+	justify-content: center;
+	background: #999;
+	color: #555;
 }
 body > div {
-  margin: 1em;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: #fff;
-  padding: 1rem;
-  border-radius: .5rem;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+	margin: 1em;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: #fff;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
 color_wheel {
-  position: relative;
-  width: 8rem;
-  height: 8rem;
-  padding: 0;
-  border-radius: 50%;
-  list-style: none;
-  transform: rotate(-90deg);
+	position: relative;
+	width: 8rem;
+	height: 8rem;
+	padding: 0;
+	border-radius: 50%;
+	list-style: none;
+	transform: rotate(-90deg);
 }
 color_wheel > * {
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 2rem;
-  height: 2rem;
-  margin: -1rem;
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 2rem;
+	height: 2rem;
+	margin: -1rem;
 }
 color_wheel > *:nth-of-type(1) {
-  transform: rotate(0deg) translate(4rem) rotate(0deg);
+	transform: rotate(0deg) translate(4rem) rotate(0deg);
 }
 color_wheel > *:nth-of-type(2) {
-  transform: rotate(30deg) translate(4rem) rotate(-30deg);
+	transform: rotate(30deg) translate(4rem) rotate(-30deg);
 }
 color_wheel > *:nth-of-type(3) {
-  transform: rotate(60deg) translate(4rem) rotate(-60deg);
+	transform: rotate(60deg) translate(4rem) rotate(-60deg);
 }
 color_wheel > *:nth-of-type(4) {
-  transform: rotate(90deg) translate(4rem) rotate(-90deg);
+	transform: rotate(90deg) translate(4rem) rotate(-90deg);
 }
 color_wheel > *:nth-of-type(5) {
-  transform: rotate(120deg) translate(4rem) rotate(-120deg);
+	transform: rotate(120deg) translate(4rem) rotate(-120deg);
 }
 color_wheel > *:nth-of-type(6) {
-  transform: rotate(150deg) translate(4rem) rotate(-150deg);
+	transform: rotate(150deg) translate(4rem) rotate(-150deg);
 }
 color_wheel > *:nth-of-type(7) {
-  transform: rotate(180deg) translate(4rem) rotate(-180deg);
+	transform: rotate(180deg) translate(4rem) rotate(-180deg);
 }
 color_wheel > *:nth-of-type(8) {
-  transform: rotate(210deg) translate(4rem) rotate(-210deg);
+	transform: rotate(210deg) translate(4rem) rotate(-210deg);
 }
 color_wheel > *:nth-of-type(9) {
-  transform: rotate(240deg) translate(4rem) rotate(-240deg);
+	transform: rotate(240deg) translate(4rem) rotate(-240deg);
 }
 color_wheel > *:nth-of-type(10) {
-  transform: rotate(270deg) translate(4rem) rotate(-270deg);
+	transform: rotate(270deg) translate(4rem) rotate(-270deg);
 }
 color_wheel > *:nth-of-type(11) {
-  transform: rotate(300deg) translate(4rem) rotate(-300deg);
+	transform: rotate(300deg) translate(4rem) rotate(-300deg);
 }
 color_wheel > *:nth-of-type(12) {
-  transform: rotate(330deg) translate(4rem) rotate(-330deg);
+	transform: rotate(330deg) translate(4rem) rotate(-330deg);
 }
 
 color_wheel swatch {
-  cursor: pointer;
-  border-radius: 100%;
-  display: block;
+	cursor: pointer;
+	border-radius: 100%;
+	display: block;
 }
 
 .red {
-  background: #ff0000;
+	background: #ff0000;
 }
 
 .red-orange {
-  background: #ff5300;
+	background: #ff5300;
 }
 
 .orange {
-  background: #ffa500;
+	background: #ffa500;
 }
 
 .orange-yellow {
-  background: #ffd200;
+	background: #ffd200;
 }
 
 .yellow {
-  background: #ffff00;
+	background: #ffff00;
 }
 
 .yellow-green {
-  background: #80ff00;
+	background: #80ff00;
 }
 
 .green {
-  background: #0f0;
+	background: #0f0;
 }
 
 .green-blue {
-  background: #008080;
+	background: #008080;
 }
 
 .blue {
-  background: #00f;
+	background: #00f;
 }
 
 .blue-purple {
-  background: #4000c0;
+	background: #4000c0;
 }
 
 .purple {
-  background: #800080;
+	background: #800080;
 }
 
 .purple-red {
-  background: #c00040;
+	background: #c00040;
 }
 
 h2 {
-  font-weight: normal;
-  margin-bottom: 1em;
+	font-weight: normal;
+	margin-bottom: 1em;
 }
 
 palettes {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 palette {
-  display: grid;
-  grid-template-columns: repeat(13, auto);
-  grid-auto-flow: row;
+	display: grid;
+	grid-template-columns: repeat(13, auto);
+	grid-auto-flow: row;
+	background: #999;
 }
 
 palette swatch {
-  background: #555;
-  width: 1em;
-  height: 1em;
-  display: block;
+	background: #555;
+	width: 1em;
+	height: 1em;
+	display: block;
 }
 
 label {
-  margin-left: .5em;
-  font-size: 1.2rem;
+	margin-left: 0.5em;
+	font-size: 1.2rem;
 }
 
 .sample_swatch {
-  width: 50px;
-  height: 50px;
-  display: inline-block;
-  background: red;
+	width: 50px;
+	height: 50px;
+	display: inline-block;
+	background: red;
 }
 
 .dim {
-  opacity: .3;
+	opacity: 0.3;
 }
 
 .callout {
-  animation-name: callout;
-  animation-duration: 1s;
+	animation-name: callout;
+	animation-duration: 1s;
 }
 
 @keyframes callout {
-  from {
-    opacity: .25;
-  }
-  to {
-    opacity: 1;
-  }
+	from {
+		opacity: 0.25;
+	}
+	to {
+		opacity: 1;
+	}
 }
 </style>
 <!-- html -->
@@ -237,256 +242,312 @@ label {
 
 
 	// set global variables
+// set global variables
 var color_index = new Array();
 var color_scheme;
 var number_steps;
 
 // if they click on a color wheel swatch to choose a base color
 $("color_wheel swatch").click(function() {
-  // get the color index from the swatch and store as the base color
-  base_color = $(this).data("color_index");
-  // if a color scheme has been chosen and a color wheel swatch has been clicked
-  if (color_scheme && color_index.length > 0) {
-    // update the color index with the new values
-    update_color_index(base_color);
-  } 
-  // if the color scheme has been chosen, but a base color has not been clicked yet
-  else if (color_scheme) {
-    // add the color index to the color_index array
-    color_index.push(base_color);
-        // update the color_index array with the new values
-    update_color_index(base_color);
-  } 
-  // otherwise, the color wheel is being clicked for the first time
-  else {
-    // add the color index to the color_index array, using shift in case they are clicking more than one color
-    color_index.shift(base_color);
-  }
-  // update the color wheel with the values stored in the color_index array
-  update_color_wheel(base_color);
+	// get the color index from the swatch and store as the base color
+	base_color = $(this).data("color_index");
+	// if a color scheme has been chosen and a color wheel swatch has been clicked
+	if (color_scheme && color_index.length > 0) {
+		// update the color index with the new values
+		update_color_index(base_color);
+	}
+	// if the color scheme has been chosen, but a base color has not been clicked yet
+	else if (color_scheme) {
+		// add the color index to the color_index array
+		color_index.push(base_color);
+		// update the color_index array with the new values
+		update_color_index(base_color);
+	}
+	// otherwise, the color wheel is being clicked for the first time
+	else {
+		// add the color index to the color_index array, using shift in case they are clicking more than one color
+		color_index.shift(base_color);
+	}
+	// update the color wheel with the values stored in the color_index array
+	update_color_wheel(base_color);
 });
 // if they click on a color scheme option
 $("color_schemes input").click(function() {
-  // get the color scheme from data-color_scheme attribute and store it in the color_scheme var
-  color_scheme = $(this).data("color_scheme");
-  // if they click a color scheme before they've chosen a base color. the color_index array will be empty
-  if (color_index.length == 0) {
-    // prompt them to choose a base color
-    $('#choose_a_color').addClass("callout"); 
-  } else {
-    // remove any swatches currently in the palette
-    $("palette").html("");
-    // update the color_index array based the new first color in the color_index array
-    update_color_index(color_index[0]);
-  }
+	// get the color scheme from data-color_scheme attribute and store it in the color_scheme var
+	color_scheme = $(this).data("color_scheme");
+	// if they click a color scheme before they've chosen a base color. the color_index array will be empty
+	if (color_index.length == 0) {
+		// prompt them to choose a base color
+		$('#choose_a_color').addClass("callout");
+	} else {
+		// remove any swatches currently in the palette
+		$("palette").html("");
+		// update the color_index array based the new first color in the color_index array
+		update_color_index(color_index[0]);
+	}
 });
 
 function update_color_index(base_color) {
-  // remove all values except the first one; the base_color
-  color_index.length = 1;
-  // populate the remaining colors based on the chosen color scheme
-  switch (color_scheme) {
-      // need the color indexes to always be from 1 to 12 so this is a bit tricky
-    case "triadic":
-      // triadic needs to be 1/3 of the way around the wheel
-      if (base_color < 5) {
-        color_index.push(base_color + 4, base_color + 8);
-      } else if (base_color < 9) {
-        color_index.push(base_color + 4, base_color - 4);
-      } else {
-        color_index.push(base_color - 4, base_color - 8);
-      }
-      // store the background colors as css. didn't know this was in RGB format
-      alt_rgb1 = $(
-        "color_wheel swatch:nth-of-type(" + color_index[1] + ")"
-      ).css("background-color");
-      // convert the RGB to HSL so the tint/tone levels can be easily created by dividing the L value
-      alt_hsl1 = RGBToHSL(alt_rgb1);
-      // generate the tint/tone levels alt color 1
-      generate_steps(alt_hsl1, "alt_1");
-      alt_rgb2 = $(
-        "color_wheel swatch:nth-of-type(" + color_index[2] + ")"
-      ).css("background-color");
-      alt_hsl2 = RGBToHSL(alt_rgb2);
-       // generate the tint/tone levels alt color 1
-      generate_steps(alt_hsl2, "alt_2");
-      break;
-    case "complementary":
-      // repeat for the other color schemes
-      if (base_color >= 7) {
-        color_index.push(base_color - 6);
-      } else {
-        color_index.push(base_color + 6);
-      }
-      alt_rgb1 = $(
-        "color_wheel swatch:nth-of-type(" + color_index[1] + ")"
-      ).css("background-color");
-      alt_hsl1 = RGBToHSL(alt_rgb1);
-      generate_steps(alt_hsl1, "alt_1");
-      break;
-    case "split-complementary":
-      if (base_color < 6) {
-        color_index.push(base_color + 7, base_color + 5);
-      } else if (base_color > 7) {
-        color_index.push(base_color - 7, base_color - 5);
-      } else {
-        color_index.push(base_color + 5, base_color - 5);
-      }
-      alt_rgb1 = $(
-        "color_wheel swatch:nth-of-type(" + color_index[1] + ")"
-      ).css("background-color");
-      alt_hsl1 = RGBToHSL(alt_rgb1);
-      generate_steps(alt_hsl1, "alt_1");
-      alt_rgb2 = $(
-        "color_wheel swatch:nth-of-type(" + color_index[2] + ")"
-      ).css("background-color");
-      alt_hsl2 = RGBToHSL(alt_rgb2);
-      generate_steps(alt_hsl2, "alt_2");
-      break;
-    case "analogous":
-      if (base_color == 1) {
-        color_index.push(12, 2);
-      } else if (base_color == 12) {
-        color_index.push(11, 1);
-      } else {
-        color_index.push(base_color - 1, base_color + 1);
-      }
-      alt_rgb1 = $(
-        "color_wheel swatch:nth-of-type(" + color_index[1] + ")"
-      ).css("background-color");
-      alt_hsl1 = RGBToHSL(alt_rgb1);
-      generate_steps(alt_hsl1, "alt_1");
-      alt_rgb2 = $(
-        "color_wheel swatch:nth-of-type(" + color_index[2] + ")"
-      ).css("background-color");
-      alt_hsl2 = RGBToHSL(alt_rgb2);
-      generate_steps(alt_hsl2, "alt_2");
-      break;
-  }
-// reset the color index to contain only the base color. need to do this in case they pick a different swatch
-  update_color_wheel(color_index[0]);
+	// remove all values except the first one; the base_color
+	color_index.length = 1;
+	// populate the remaining colors based on the chosen color scheme
+	switch (color_scheme) {
+		// need the color indexes to always be from 1 to 12 so this is a bit tricky
+		case "triadic":
+			// triadic needs to be 1/3 of the way around the wheel
+			if (base_color < 5) {
+				color_index.push(base_color + 4, base_color + 8);
+			} else if (base_color < 9) {
+				color_index.push(base_color + 4, base_color - 4);
+			} else {
+				color_index.push(base_color - 4, base_color - 8);
+			}
+			// store the background colors as css. didn't know this was in RGB format
+			alt_rgb1 = $(
+				"color_wheel swatch:nth-of-type(" + color_index[1] + ")"
+			).css("background-color");
+			// convert the RGB to HSL so the tint/tone levels can be easily created by dividing the L value
+			alt_hsl1 = RGBToHSL(alt_rgb1);
+			// generate the tint/tone levels alt color 1
+			generate_steps(alt_hsl1, "alt_1");
+			alt_rgb2 = $(
+				"color_wheel swatch:nth-of-type(" + color_index[2] + ")"
+			).css("background-color");
+			alt_hsl2 = RGBToHSL(alt_rgb2);
+			// generate the tint/tone levels alt color 1
+			generate_steps(alt_hsl2, "alt_2");
+			break;
+		case "complementary":
+			// repeat for the other color schemes
+			if (base_color >= 7) {
+				color_index.push(base_color - 6);
+			} else {
+				color_index.push(base_color + 6);
+			}
+			alt_rgb1 = $(
+				"color_wheel swatch:nth-of-type(" + color_index[1] + ")"
+			).css("background-color");
+			alt_hsl1 = RGBToHSL(alt_rgb1);
+			generate_steps(alt_hsl1, "alt_1");
+			break;
+		case "split-complementary":
+			if (base_color < 6) {
+				color_index.push(base_color + 7, base_color + 5);
+			} else if (base_color > 7) {
+				color_index.push(base_color - 7, base_color - 5);
+			} else {
+				color_index.push(base_color + 5, base_color - 5);
+			}
+			alt_rgb1 = $(
+				"color_wheel swatch:nth-of-type(" + color_index[1] + ")"
+			).css("background-color");
+			alt_hsl1 = RGBToHSL(alt_rgb1);
+			generate_steps(alt_hsl1, "alt_1");
+			alt_rgb2 = $(
+				"color_wheel swatch:nth-of-type(" + color_index[2] + ")"
+			).css("background-color");
+			alt_hsl2 = RGBToHSL(alt_rgb2);
+			generate_steps(alt_hsl2, "alt_2");
+			break;
+		case "analogous":
+			if (base_color == 1) {
+				color_index.push(12, 2);
+			} else if (base_color == 12) {
+				color_index.push(11, 1);
+			} else {
+				color_index.push(base_color - 1, base_color + 1);
+			}
+			alt_rgb1 = $(
+				"color_wheel swatch:nth-of-type(" + color_index[1] + ")"
+			).css("background-color");
+			alt_hsl1 = RGBToHSL(alt_rgb1);
+			generate_steps(alt_hsl1, "alt_1");
+			alt_rgb2 = $(
+				"color_wheel swatch:nth-of-type(" + color_index[2] + ")"
+			).css("background-color");
+			alt_hsl2 = RGBToHSL(alt_rgb2);
+			generate_steps(alt_hsl2, "alt_2");
+			break;
+	}
+	// reset the color index to contain only the base color. need to do this in case they pick a different swatch
+	update_color_wheel(color_index[0]);
 }
 
 function update_color_wheel(base_color) {
-  // if they have chosen a scheme
-  if (color_scheme !== "undefined") {
-      // need to remove the old base color but keep the length of the array > 1 so it doesn't f up... this needs better explanaition I know. try comenting the next line and test and you'll see. sometimes extra colors get left undimmed in the wheel 
-    color_index.shift();
-    // add the new base color index
-    color_index.unshift(base_color);
-  } else {
-    // if there's no color scheme yet; i.e., they haven't chosen one, add the base color
-    color_index.push(base_color);
-  }
-  // dim all the color wheel swatches
-  $("color_wheel swatch").addClass("dim");
-  // get the RGB value of the color wheel swatch at the first position in the index
-  base_rgb = $("color_wheel swatch:nth-of-type(" + color_index[0] + ")").css(
-    "background-color"
-  );
-  // convert it to hsl for easy stepping
-  base_hsl = RGBToHSL(base_rgb);
-  // generate the steps
-  generate_steps(base_hsl, "base_color");
- // undim the swatches at the locations stored in the color_index
-  for (var i = 0; i < color_index.length; i++) {
-    $("color_wheel swatch:nth-of-type(" + color_index[i] + ")").removeClass(
-      "dim"
-    );
-  }
-}
-
-// pass on the number of swatches
-
-
-// generate the figma swatches
-document.getElementById('generate').onclick = () => {
-    const count = $('swatch').length;
-const fillColor = 'r: .4, g: 0.5, b: .3';
-    parent.postMessage({ pluginMessage: { type: 'create-swatches', count, fillColor } }, '*')
+	// if they have chosen a scheme
+	if (color_scheme !== "undefined") {
+		// need to remove the old base color but keep the length of the array > 1 so it doesn't f up... this needs better explanaition I know. try comenting the next line and test and you'll see. sometimes extra colors get left undimmed in the wheel 
+		color_index.shift();
+		// add the new base color index
+		color_index.unshift(base_color);
+	} else {
+		// if there's no color scheme yet; i.e., they haven't chosen one, add the base color
+		color_index.push(base_color);
+	}
+	// dim all the color wheel swatches
+	$("color_wheel swatch").addClass("dim");
+	// get the RGB value of the color wheel swatch at the first position in the index
+	base_rgb = $("color_wheel swatch:nth-of-type(" + color_index[0] + ")").css(
+		"background-color"
+	);
+	// convert it to hsl for easy stepping
+	base_hsl = RGBToHSL(base_rgb);
+	// generate the steps
+	generate_steps(base_hsl, "base_color");
+	// undim the swatches at the locations stored in the color_index
+	for (var i = 0; i < color_index.length; i++) {
+		$("color_wheel swatch:nth-of-type(" + color_index[i] + ")").removeClass(
+			"dim"
+		);
+	}
 }
 
 // generate the palette swatches
 function generate_steps(hsl, palette_id) {
-  // clear the palette of any existing swatches
-  $("palette#" + palette_id).html("");
-  // get the h value from the hsl passed to the function
-  var h = hsl.split("(").pop().split(",")[0];
-  // repeat for l
-  var l = hsl.substring(hsl.lastIndexOf(",") + 1, hsl.lastIndexOf("%"));
-  // round it 
-  var l_rounded = Math.round(parseFloat(l));
-  // create an array for the lightness levels
-  var lightness_levels = new Array();
-  // create steps for tint and tone
-  var tint_step = Math.round(l_rounded / 6);
-  var tone_step = Math.round((100 - l_rounded) / 6);
-  var step = 0;
-  // generate the palette swatchs
-  for (var i = 0; i < 13; i++) {
-    var $newSwatch = "<swatch></swatch>";
+	// clear the palette of any existing swatches
+	$("palette#" + palette_id).html("");
 
-    // this is where we try to get the swatches
-    // add the swatches to the palette id that was passed in the function
-    $("palette#" + palette_id + "").append($newSwatch);
-  }
-  // generate six tints
-  for (var i = 0; i < 6; i++) {
-    step += tint_step;
-    tint_level = "hsl(" + h + ",100%," + step + "%)";
-    lightness_levels.push(tint_level);
-  }
-  // need to add the original hsl for the middle step. there's always gonna be an odd number of palette swatches for this reason
-  tone_level = hsl;
-  lightness_levels.push(tone_level);
-  // generate the tones
-  for (var i = 0; i < 6; i++) {
-    step += tone_step;
-    tone_level = "hsl(" + h + ",100%," + step + "%)";
-    lightness_levels.push(tone_level);
-  }
-  // set the background colors of the palette swatches with the ones stored in the lightnesslevels array
-  for (var i = 0; i < lightness_levels.length; i++) {
-    var ntarget = i + 1;
-    $("palette#" + palette_id + " swatch:nth-of-type(" + ntarget + ")").css(
-      "background-color",
-      lightness_levels[i]
-    );
-  }
+
+
+	// get the h value from the hsl passed to the function
+	console.log(hsl);
+	var h = hsl.split("(").pop().split(",")[0];
+
+	// repeat for s. turn the percentage into an integer
+	var s_string = hsl.split("(").pop().split(",")[1];
+	s = s_string.slice(0, -1);
+		// s_rounded = Math.round(parseFloat(s));
+console.log("s = " + s);
+var s_step = Math.round(s/12);
+
+console.log("s_step = " + s_step);
+
+	// repeat for l
+	// var l = hsl.substring(hsl.lastIndexOf(",") + 1, hsl.lastIndexOf("%"));
+		var l_string = hsl.split("(").pop().split(",")[2];
+	l = l_string.slice(0, -2);
+
+	// round it 
+	var l_rounded = Math.round(parseFloat(l));
+	console.log("l_rouded is " + l_rounded);
+	// create an array for the lightness levels
+	var lightness = new Array();
+	// create array for s levels
+	// create steps for tint and tone
+	var tone_step = Math.round(l_rounded / 6);
+	console.log("tone_step is " + tone_step);
+	var tint_step = Math.round((100 - l_rounded) / 6);
+		console.log("tint_step is " + tint_step);
+
+	var l_step = 0;
+
+	// generate the palette swatches. Each color should have 120 colors
+	for (var i = 0; i < 169; i++) {
+		var $newSwatch = "<swatch></swatch>";
+		// add the swatches to the palette id that was passed in the function
+		$("palette#" + palette_id + "").append($newSwatch);
+	}
+
+
+
+
+
+	// need to add the original hsl for the middle step. there's always gonna be an odd number of palette swatches for this reason
+	// tone_level = hsl;
+	// lightness.push(tone_level);
+
+
+	// generate tints
+
+
+
+	// generate tones
+
+	for (var i = 0; i < 6; i++) {
+		// reset to full saturation
+				s = 100;
+		tone_level = "hsl(" + h + "," + s + "%," + l_step + "%)";
+		lightness.push(tone_level);
+		//generate s levels 
+		for (var ii = 0; ii < 12; ii++) {
+			sat_level = "hsl(" + h + "," + s + "%," + l_step + "%)";
+			lightness.push(sat_level);
+			s -= s_step;
+		}
+				l_step += tone_step;
+
+		// reset to full saturation for the next row
+
+
+	}
+
+	// create 6 rows of tint to saturation
+// reset lightness
+	l_step = l_rounded;
+	for (var i = 0; i < 7; i++) {
+		s = 100;
+			l_step += tint_step;
+		tint_level = "hsl(" + h + "," + s + "%," + l_step + "%)";
+		lightness.push(tint_level);
+		// create 12 additional steps
+		for (var ii = 0; ii < 12; ii++) {
+			sat_level = "hsl(" + h + "," + s + "%," + l_step + "%)";
+			lightness.push(sat_level);
+			s -= s_step;
+		}
+
+
+	}
+
+// generate core strip?
+
+
+	console.log(lightness);
+	// lightness.reverse();
+	// set the background colors of the palette swatches with the ones stored in the lightness levels array
+	for (var i = 0; i < lightness.length; i++) {
+		var ntarget = i + 1;
+		$("palette#" + palette_id + " swatch:nth-of-type(" + ntarget + ")").css(
+			"background-color",
+			lightness[i]
+		);
+	}
 }
+
+
+
 // not mine-from css-tricks, add reference
 function RGBToHSL(rgb) {
-  let sep = rgb.indexOf(",") > -1 ? "," : " ";
-  rgb = rgb
-    .substr(4)
-    .split(")")[0]
-    .split(sep);
-  for (let R in rgb) {
-    let r = rgb[R];
-    if (r.indexOf("%") > -1)
-      rgb[R] = Math.round(r.substr(0, r.length - 1) / 100 * 255);
-  }
-  let r = rgb[0] / 255,
-    g = rgb[1] / 255,
-    b = rgb[2] / 255;
-  let cmin = Math.min(r, g, b),
-    cmax = Math.max(r, g, b),
-    delta = cmax - cmin,
-    h = 0,
-    s = 0,
-    l = 0;
-  if (delta === 0) h = 0;
-  else if (cmax == r) h = ((g - b) / delta) % 6;
-  else if (cmax == g) h = (b - r) / delta + 2;
-  else h = (r - g) / delta + 4;
-  h = Math.round(h * 60);
-  if (h < 0) h += 360;
-  l = (cmax + cmin) / 2;
-  s = delta == 0 ? 0 : delta / (1 - Math.abs(2 * l - 1));
-  s = +(s * 100).toFixed(1);
-  l = +(l * 100).toFixed(1);
-  return "hsl(" + h + "," + s + "%," + l + "%)";
+	let sep = rgb.indexOf(",") > -1 ? "," : " ";
+	rgb = rgb
+		.substr(4)
+		.split(")")[0]
+		.split(sep);
+	for (let R in rgb) {
+		let r = rgb[R];
+		if (r.indexOf("%") > -1)
+			rgb[R] = Math.round(r.substr(0, r.length - 1) / 100 * 255);
+	}
+	let r = rgb[0] / 255,
+		g = rgb[1] / 255,
+		b = rgb[2] / 255;
+	let cmin = Math.min(r, g, b),
+		cmax = Math.max(r, g, b),
+		delta = cmax - cmin,
+		h = 0,
+		s = 0,
+		l = 0;
+	if (delta === 0) h = 0;
+	else if (cmax == r) h = ((g - b) / delta) % 6;
+	else if (cmax == g) h = (b - r) / delta + 2;
+	else h = (r - g) / delta + 4;
+	h = Math.round(h * 60);
+	if (h < 0) h += 360;
+	l = (cmax + cmin) / 2;
+	s = delta == 0 ? 0 : delta / (1 - Math.abs(2 * l - 1));
+	s = +(s * 100).toFixed(1);
+	l = +(l * 100).toFixed(1);
+	return "hsl(" + h + "," + s + "%," + l + "%)";
 }
-
 </script>
 
