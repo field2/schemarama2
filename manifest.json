@@ -1,5 +1,6 @@
 {
   "name": "Schemarama",
+  "editorType":["figma"],
   "id": "849665022203044382",
   "api": "1.0.0",
   "main": "code.js",
