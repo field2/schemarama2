@@ -79,7 +79,7 @@ function generateColorMatrix(colors) {
 
 async function createColorGrid(colorMatrix) {
     const swatchSize = 40;
-    const gap = 4;
+    const gap = 0;
     const nodes = [];
 
     colorMatrix.forEach((variations, schemeIndex) => {
