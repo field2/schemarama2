@@ -1,0 +1,389 @@
+<style>
+    body {
+        padding: 20px;
+        font-family: Inter, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .color-wheel {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        margin-bottom: 20px;
+    }
+    
+    .color-swatch {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        left: 50%;
+        top: 50%;
+        margin: -30px;
+    }
+    /* Position each swatch in a circle */
+    
+    .color-swatch:nth-child(1) {
+        transform: rotate(0deg) translate(120px) rotate(0deg);
+    }
+    /* red */
+    
+    .color-swatch:nth-child(2) {
+        transform: rotate(30deg) translate(120px) rotate(-30deg);
+    }
+    /* red-orange */
+    
+    .color-swatch:nth-child(3) {
+        transform: rotate(60deg) translate(120px) rotate(-60deg);
+    }
+    /* orange */
+    
+    .color-swatch:nth-child(4) {
+        transform: rotate(90deg) translate(120px) rotate(-90deg);
+    }
+    /* orange-yellow */
+    
+    .color-swatch:nth-child(5) {
+        transform: rotate(120deg) translate(120px) rotate(-120deg);
+    }
+    /* yellow */
+    
+    .color-swatch:nth-child(6) {
+        transform: rotate(150deg) translate(120px) rotate(-150deg);
+    }
+    /* yellow-green */
+    
+    .color-swatch:nth-child(7) {
+        transform: rotate(180deg) translate(120px) rotate(-180deg);
+    }
+    /* green */
+    
+    .color-swatch:nth-child(8) {
+        transform: rotate(210deg) translate(120px) rotate(-210deg);
+    }
+    /* green-blue */
+    
+    .color-swatch:nth-child(9) {
+        transform: rotate(240deg) translate(120px) rotate(-240deg);
+    }
+    /* blue */
+    
+    .color-swatch:nth-child(10) {
+        transform: rotate(270deg) translate(120px) rotate(-270deg);
+    }
+    /* blue-purple */
+    
+    .color-swatch:nth-child(11) {
+        transform: rotate(300deg) translate(120px) rotate(-300deg);
+    }
+    /* purple */
+    
+    .color-swatch:nth-child(12) {
+        transform: rotate(330deg) translate(120px) rotate(-330deg);
+    }
+    /* purple-red */
+    
+    .color-swatch:hover {
+        transform: rotate(var(--rotation)) translate(120px) rotate(calc(-1 * var(--rotation))) scale(1.1);
+    }
+    
+    .color-swatch.selected {
+        outline: 3px solid #000;
+        outline-offset: 2px;
+    }
+    
+    .schemes {
+        margin-bottom: 20px;
+    }
+    
+    .scheme-btn {
+        padding: 12px 16px;
+        background: #fff;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: all 0.2s;
+    }
+    
+    .scheme-btn:hover {
+        background: #f0f0f0;
+    }
+    
+    .scheme-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+    
+    .red {
+        background: #ff0000;
+    }
+    
+    .red-orange {
+        background: #ff5300;
+    }
+    
+    .orange {
+        background: #ffa500;
+    }
+    
+    .orange-yellow {
+        background: #ffd200;
+    }
+    
+    .yellow {
+        background: #ffff00;
+    }
+    
+    .yellow-green {
+        background: #80ff00;
+    }
+    
+    .green {
+        background: #00ff00;
+    }
+    
+    .green-blue {
+        background: #008080;
+    }
+    
+    .blue {
+        background: #0000ff;
+    }
+    
+    .blue-purple {
+        background: #4000c0;
+    }
+    
+    .purple {
+        background: #800080;
+    }
+    
+    .purple-red {
+        background: #c00040;
+    }
+    /* Add dimmed state */
+    
+    .color-swatch.dimmed {
+        opacity: 0.3;
+    }
+    
+    .color-swatch.scheme-color {
+        opacity: 1;
+        transform: rotate(var(--rotation)) translate(120px) rotate(calc(-1 * var(--rotation))) scale(1.05);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    /* Steps styling */
+    
+    .steps {
+        margin-bottom: 20px;
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .step {
+        margin-bottom: 16px;
+    }
+    
+    .step-header {
+        font-size: 14px;
+        font-weight: 500;
+        color: #333;
+        margin-bottom: 8px;
+    }
+    /* Schemes styling update */
+    
+    .schemes {
+        margin-bottom: 20px;
+    }
+    /* Generate buttons */
+    
+    .generate-buttons {
+        display: grid;
+        gap: 8px;
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .generate-btn {
+        padding: 12px 16px;
+        background: #18A0FB;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: all 0.2s;
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .generate-btn:hover {
+        background: #0D8EE3;
+    }
+    
+    .generate-btn:disabled {
+        background: #CCCCCC;
+        cursor: not-allowed;
+    }
+</style>
+
+<div class="steps">
+    <div class="step">
+        <div class="step-header">1. Choose a base hue</div>
+    </div>
+</div>
+
+<div class="color-wheel">
+    <div class="color-swatch red" data-color="#ff0000" style="--rotation: 0deg"></div>
+    <div class="color-swatch red-orange" data-color="#ff5300" style="--rotation: 30deg"></div>
+    <div class="color-swatch orange" data-color="#ffa500" style="--rotation: 60deg"></div>
+    <div class="color-swatch orange-yellow" data-color="#ffd200" style="--rotation: 90deg"></div>
+    <div class="color-swatch yellow" data-color="#ffff00" style="--rotation: 120deg"></div>
+    <div class="color-swatch yellow-green" data-color="#80ff00" style="--rotation: 150deg"></div>
+    <div class="color-swatch green" data-color="#00ff00" style="--rotation: 180deg"></div>
+    <div class="color-swatch green-blue" data-color="#008080" style="--rotation: 210deg"></div>
+    <div class="color-swatch blue" data-color="#0000ff" style="--rotation: 240deg"></div>
+    <div class="color-swatch blue-purple" data-color="#4000c0" style="--rotation: 270deg"></div>
+    <div class="color-swatch purple" data-color="#800080" style="--rotation: 300deg"></div>
+    <div class="color-swatch purple-red" data-color="#c00040" style="--rotation: 330deg"></div>
+</div>
+
+<div class="steps">
+    <div class="step">
+        <div class="step-header">2. Choose a Color Scheme</div>
+    </div>
+</div>
+
+<div class="schemes">
+    <button class="scheme-btn" data-scheme="complementary" disabled>Complementary</button>
+    <button class="scheme-btn" data-scheme="triadic" disabled>Triadic</button>
+    <button class="scheme-btn" data-scheme="split-complementary" disabled>Split-complementary</button>
+    <button class="scheme-btn" data-scheme="analogous" disabled>Analogous</button>
+</div>
+
+<div class="steps">
+    <div class="step">
+        <div class="step-header">3. Create Color Scheme</div>
+    </div>
+</div>
+
+<button class="generate-btn" data-action="shapes" disabled>Create Shapes</button>
+
+<script>
+    let selectedColor = null;
+    let selectedScheme = null;
+
+    document.querySelectorAll('.color-swatch').forEach(swatch => {
+        swatch.addEventListener('click', () => {
+            // Remove previous selection
+            const previousSelected = document.querySelector('.selected');
+            if (previousSelected) {
+                previousSelected.classList.remove('selected');
+            }
+
+            // Reset all swatches to dimmed
+            document.querySelectorAll('.color-swatch').forEach(s => {
+                s.classList.add('dimmed');
+                s.classList.remove('scheme-color');
+            });
+
+            // Add selection to clicked swatch
+            swatch.classList.add('selected');
+            swatch.classList.remove('dimmed');
+
+            // Store selected color
+            selectedColor = swatch.dataset.color;
+
+            // Enable scheme buttons
+            document.querySelectorAll('.scheme-btn').forEach(btn => {
+                btn.disabled = false;
+            });
+
+            // Disable generate buttons until scheme is selected
+            document.querySelectorAll('.generate-btn').forEach(btn => {
+                btn.disabled = true;
+            });
+
+            selectedScheme = null;
+        });
+    });
+
+    document.querySelectorAll('.scheme-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            if (!selectedColor) return;
+
+            selectedScheme = btn.dataset.scheme;
+
+            // Reset all swatches to dimmed
+            document.querySelectorAll('.color-swatch').forEach(s => {
+                s.classList.add('dimmed');
+                s.classList.remove('scheme-color');
+            });
+
+            // Highlight the selected color and scheme colors
+            const baseIndex = Array.from(document.querySelectorAll('.color-swatch'))
+                .findIndex(swatch => swatch.dataset.color === selectedColor);
+
+            const schemeIndices = getSchemeIndices(baseIndex, selectedScheme);
+            schemeIndices.forEach(index => {
+                const swatch = document.querySelectorAll('.color-swatch')[index];
+                swatch.classList.remove('dimmed');
+                swatch.classList.add('scheme-color');
+            });
+
+            // Enable generate buttons
+            document.querySelectorAll('.generate-btn').forEach(btn => {
+                btn.disabled = false;
+            });
+        });
+    });
+
+    document.querySelector('.generate-btn').addEventListener('click', () => {
+        if (!selectedColor || !selectedScheme) return;
+
+        parent.postMessage({
+            pluginMessage: {
+                type: 'create-color-scheme',
+                baseColor: selectedColor,
+                scheme: selectedScheme,
+                action: 'shapes'
+            }
+        }, '*');
+    });
+
+    function getSchemeIndices(baseIndex, scheme) {
+        const total = 12;
+        switch (scheme) {
+            case 'complementary':
+                return [
+                    baseIndex,
+                    (baseIndex + 6) % total
+                ];
+            case 'triadic':
+                return [
+                    baseIndex,
+                    (baseIndex + 4) % total,
+                    (baseIndex + 8) % total
+                ];
+            case 'split-complementary':
+                return [
+                    baseIndex,
+                    (baseIndex + 5) % total,
+                    (baseIndex + 7) % total
+                ];
+            case 'analogous':
+                return [
+                    (baseIndex - 1 + total) % total,
+                    baseIndex,
+                    (baseIndex + 1) % total
+                ];
+            default:
+                return [baseIndex];
+        }
+    }
+</script>
