@@ -64,11 +64,11 @@ function generateColorMatrix(colors) {
         const variations = [];
         const { h, s, l } = hexToHSL(color);
 
-        // Generate 10x10 grid of variations
-        for (let i = 9; i >= 0; i--) {
-            for (let j = 0; j < 10; j++) {
+        // Generate 9x9 grid of variations, light to dark and desaturated to saturated
+        for (let i = 0; i <= 8; i++) { // Light to dark (top to bottom)
+            for (let j = 1; j <= 9; j++) { // Changed: desaturated to saturated (left to right)
                 const newSat = j / 10;
-                const newLight = 0.95 - (i / 10);
+                const newLight = 0.9 - (i / 10);
                 variations.push(hslToHex(h, newSat, newLight));
             }
         }
@@ -78,18 +78,18 @@ function generateColorMatrix(colors) {
 }
 
 async function createColorGrid(colorMatrix) {
-    const swatchSize = 40;
+    const swatchSize = 20;
     const gap = 0;
     const nodes = [];
 
     colorMatrix.forEach((variations, schemeIndex) => {
         const matrixNodes = variations.map((color, index) => {
             const rect = figma.createRectangle();
-            const row = Math.floor(index / 10);
-            const col = index % 10;
+            const row = Math.floor(index / 9); // Changed from 10 to 9
+            const col = index % 9; // Changed from 10 to 9
 
             rect.x = col * (swatchSize + gap);
-            rect.y = row * (swatchSize + gap) + (schemeIndex * (swatchSize * 10 + gap * 2));
+            rect.y = row * (swatchSize + gap) + (schemeIndex * (swatchSize * 9 + gap * 2)); // Changed from 10 to 9
             rect.resize(swatchSize, swatchSize);
             rect.fills = [{ type: 'SOLID', color: hexToRGB(color) }];
 
