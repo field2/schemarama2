@@ -29,11 +29,11 @@
         }
     ],
     "description": "A color scheme generator that creates harmonious color palettes",
-    "author": "Your Name",
-    "website": "https://your-website.com",
-    "repository": "https://github.com/yourusername/schemarama",
+    "author": "Ben Dunkle",
+    "website": "https://bendunkle.com",
+    "repository": "https://github.com/field2/schemarama",
     "version": "1.0.0",
-    "homepage": "https://your-website.com/schemarama",
+    "homepage": "https://bendunkle.com/schemarama",
     "keywords": ["color", "palette", "scheme", "generator", "design"],
     "license": "MIT"
 }
