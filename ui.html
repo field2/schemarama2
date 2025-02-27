@@ -1,6 +1,5 @@
 <style>
     body {
-        padding: 20px;
         font-family: Inter, sans-serif;
         display: flex;
         flex-direction: column;
@@ -25,7 +24,7 @@
         transition: all 0.3s ease;
         left: 50%;
         top: 50%;
-        margin: -18px;
+        margin: -15px;
     }
     /* Position each swatch in a circle */
     
@@ -112,11 +111,11 @@
         border: 1px solid #ccc;
         border-radius: 6px;
         cursor: pointer;
-        padding: 12px;
+        padding: 4px;
         transition: all 0.2s;
         display: flex;
         flex-direction: column;
-        gap: 8px;
+        gap: 4px;
         justify-content: center;
         align-items: center;
     }
@@ -133,8 +132,8 @@
     }
     
     .scheme-btn.selected {
-        background: #E5F3FF;
-        border-color: #18A0FB;
+        background: #e5f3ff;
+        border-color: #18a0fb;
     }
     
     .scheme-btn:disabled {
@@ -203,20 +202,27 @@
     /* Steps styling */
     
     .steps {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    h2 {
         text-align: center;
-    }
-    
-    .step {
-        margin-bottom: 16px;
-    }
-    
-    .step-header {
-        font-size: 14px;
+        font-size: 12px;
         font-weight: 500;
         color: #333;
         margin-bottom: 8px;
+        text-transform: uppercase;
     }
     /* Schemes styling update */
+    
+    label {
+        font-size: 9px;
+        text-transform: uppercase;
+        font-weight: 500;
+        color: #535353;
+    }
     
     .schemes {
         margin-bottom: 20px;
@@ -232,171 +238,195 @@
     
     .generate-btn {
         padding: 12px 16px;
-        background: #18A0FB;
+        background: #18a0fb;
         color: white;
         border: none;
         border-radius: 6px;
         cursor: pointer;
-        font-size: 14px;
+        font-size: 13px;
         transition: all 0.2s;
         width: 100%;
         max-width: 300px;
+        text-transform: uppercase;
     }
     
     .generate-btn:hover {
-        background: #0D8EE3;
+        background: #0d8ee3;
     }
     
     .generate-btn:disabled {
-        background: #CCCCCC;
+        background: #cccccc;
         cursor: not-allowed;
     }
 </style>
 
 <div class="steps">
     <div class="step">
-        <div class="step-header">1. Choose a base hue</div>
+        <h2>Base Hue</h2>
+
+        <div class="color-wheel">
+            <div class="color-swatch red" data-color="#ff0000" style="--rotation: 0deg"></div>
+            <div class="color-swatch red-orange" data-color="#ff5300" style="--rotation: 30deg"></div>
+            <div class="color-swatch orange" data-color="#ffa500" style="--rotation: 60deg"></div>
+            <div class="color-swatch orange-yellow" data-color="#ffd200" style="--rotation: 90deg"></div>
+            <div class="color-swatch yellow" data-color="#ffff00" style="--rotation: 120deg"></div>
+            <div class="color-swatch yellow-green" data-color="#80ff00" style="--rotation: 150deg"></div>
+            <div class="color-swatch green" data-color="#00ff00" style="--rotation: 180deg"></div>
+            <div class="color-swatch green-blue" data-color="#008080" style="--rotation: 210deg"></div>
+            <div class="color-swatch blue" data-color="#0000ff" style="--rotation: 240deg"></div>
+            <div class="color-swatch blue-purple" data-color="#4000c0" style="--rotation: 270deg"></div>
+            <div class="color-swatch purple" data-color="#800080" style="--rotation: 300deg"></div>
+            <div class="color-swatch purple-red" data-color="#c00040" style="--rotation: 330deg"></div>
+        </div>
     </div>
-</div>
 
-<div class="color-wheel">
-    <div class="color-swatch red" data-color="#ff0000" style="--rotation: 0deg"></div>
-    <div class="color-swatch red-orange" data-color="#ff5300" style="--rotation: 30deg"></div>
-    <div class="color-swatch orange" data-color="#ffa500" style="--rotation: 60deg"></div>
-    <div class="color-swatch orange-yellow" data-color="#ffd200" style="--rotation: 90deg"></div>
-    <div class="color-swatch yellow" data-color="#ffff00" style="--rotation: 120deg"></div>
-    <div class="color-swatch yellow-green" data-color="#80ff00" style="--rotation: 150deg"></div>
-    <div class="color-swatch green" data-color="#00ff00" style="--rotation: 180deg"></div>
-    <div class="color-swatch green-blue" data-color="#008080" style="--rotation: 210deg"></div>
-    <div class="color-swatch blue" data-color="#0000ff" style="--rotation: 240deg"></div>
-    <div class="color-swatch blue-purple" data-color="#4000c0" style="--rotation: 270deg"></div>
-    <div class="color-swatch purple" data-color="#800080" style="--rotation: 300deg"></div>
-    <div class="color-swatch purple-red" data-color="#c00040" style="--rotation: 330deg"></div>
-</div>
-
-<div class="steps">
     <div class="step">
-        <div class="step-header">2. Choose a Color Scheme</div>
+        <h2>Color Scheme</h2>
+
+        <div class="schemes">
+            <button class="scheme-btn" data-scheme="complementary" disabled>
+        <svg
+          width="304"
+          height="303"
+          viewBox="0 0 304 303"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <!-- complementary.svg contents --><path d="M111.767 29.8138C118.946 42.2494 114.686 58.1508 102.25 65.3305C89.8144 72.5102 73.913 68.2494 66.7333 55.8138C59.5536 43.3782 63.8144 27.4769 76.25 20.2971C88.6856 13.1174 104.587 17.3782 111.767 29.8138Z"
+            fill="#CACACA"/><path d="M237.267 247.186C244.446 259.622 240.186 275.523 227.75 282.703C215.314 289.883 199.413 285.622 192.233 273.186C185.054 260.751 189.314 244.849 201.75 237.67C214.186 230.49 230.087 234.751 237.267 247.186Z"
+            fill="#CACACA"/><path d="M56.3138 66.2333C68.7494 73.413 73.0102 89.3144 65.8305 101.75C58.6508 114.186 42.7494 118.446 30.3138 111.267C17.8782 104.087 13.6174 88.1856 20.7971 75.75C27.9769 63.3144 43.8782 59.0536 56.3138 66.2333Z"
+            fill="#CACACA"/><path d="M26.5 125.5C40.8594 125.5 52.5 137.141 52.5 151.5C52.5 165.859 40.8594 177.5 26.5 177.5C12.1406 177.5 0.5 165.859 0.5 151.5C0.5 137.141 12.1406 125.5 26.5 125.5Z"
+            fill="#CACACA"/><path d="M277.5 125.5C291.859 125.5 303.5 137.141 303.5 151.5C303.5 165.859 291.859 177.5 277.5 177.5C263.141 177.5 251.5 165.859 251.5 151.5C251.5 137.141 263.141 125.5 277.5 125.5Z"
+            fill="#CACACA"/><path d="M247.686 66.2333C260.122 59.0536 276.023 63.3144 283.203 75.75C290.383 88.1856 286.122 104.087 273.686 111.267C261.251 118.446 245.349 114.186 238.17 101.75C230.99 89.3144 235.251 73.413 247.686 66.2333Z"
+            fill="#CACACA"/><path d="M66.7333 247.186C73.913 234.751 89.8144 230.49 102.25 237.67C114.686 244.849 118.946 260.751 111.767 273.186C104.587 285.622 88.6856 289.883 76.25 282.703C63.8144 275.523 59.5536 259.622 66.7333 247.186Z"
+            fill="#CACACA"/><path d="M192.233 29.8138C199.413 17.3782 215.314 13.1175 227.75 20.2972C240.186 27.4769 244.446 43.3782 237.267 55.8138C230.087 68.2495 214.186 72.5102 201.75 65.3305C189.314 58.1508 185.054 42.2495 192.233 29.8138Z"
+            fill="#CACACA"/><path d="M178 26C178 40.3594 166.359 52 152 52C137.641 52 126 40.3594 126 26C126 11.6406 137.641 0 152 0C166.359 0 178 11.6406 178 26Z"
+            fill="black"/><path d="M30.3138 191.733C42.7494 184.554 58.6508 188.814 65.8305 201.25C73.0102 213.686 68.7494 229.587 56.3138 236.767C43.8782 243.946 27.9769 239.686 20.7971 227.25C13.6174 214.814 17.8782 198.913 30.3138 191.733Z"
+            fill="#CACACA"/><path d="M273.686 191.733C286.122 198.913 290.383 214.814 283.203 227.25C276.023 239.686 259.622 243.946 247.686 236.767C235.251 229.587 230.99 213.686 238.17 201.25C245.349 188.814 261.251 184.554 273.686 191.733Z"
+            fill="#CACACA"/><path d="M178 277C178 291.359 166.359 303 152 303C137.641 303 126 291.359 126 277C126 262.641 137.641 251 152 251C166.359 251 178 262.641 178 277Z"
+            fill="black"
+          />
+        </svg>
+        <label for="complementary">Complementary</label>
+      </button>
+            <button class="scheme-btn" data-scheme="triadic" disabled>
+        <svg
+          width="304"
+          height="303"
+          viewBox="0 0 304 303"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        ><path d="M178 277C178 291.359 166.359 303 152 303C137.641 303 126 291.359 126 277C126 262.641 137.641 251 152 251C166.359 251 178 262.641 178 277Z"
+            fill="#CACACA"/><path d="M111.767 29.8138C118.946 42.2494 114.686 58.1508 102.25 65.3305C89.8144 72.5102 73.913 68.2494 66.7333 55.8138C59.5536 43.3782 63.8144 27.4769 76.25 20.2971C88.6856 13.1174 104.587 17.3782 111.767 29.8138Z"
+            fill="#CACACA"/><path d="M237.267 247.186C244.446 259.622 240.186 275.523 227.75 282.703C215.314 289.883 199.413 285.622 192.233 273.186C185.054 260.751 189.314 244.849 201.75 237.67C214.186 230.49 230.087 234.751 237.267 247.186Z"
+            fill="#CACACA"/><path d="M56.3138 66.2333C68.7494 73.413 73.0102 89.3144 65.8305 101.75C58.6508 114.186 42.7494 118.446 30.3138 111.267C17.8782 104.087 13.6174 88.1856 20.7971 75.75C27.9769 63.3144 43.8782 59.0536 56.3138 66.2333Z"
+            fill="#CACACA"/><path d="M26.5 125.5C40.8594 125.5 52.5 137.141 52.5 151.5C52.5 165.859 40.8594 177.5 26.5 177.5C12.1406 177.5 0.5 165.859 0.5 151.5C0.5 137.141 12.1406 125.5 26.5 125.5Z"
+            fill="#CACACA"/><path d="M277.5 125.5C291.859 125.5 303.5 137.141 303.5 151.5C303.5 165.859 291.859 177.5 277.5 177.5C263.141 177.5 251.5 165.859 251.5 151.5C251.5 137.141 263.141 125.5 277.5 125.5Z"
+            fill="#CACACA"/><path d="M247.686 66.2333C260.122 59.0536 276.023 63.3144 283.203 75.75C290.383 88.1856 286.122 104.087 273.686 111.267C261.251 118.446 245.349 114.186 238.17 101.75C230.99 89.3144 235.251 73.413 247.686 66.2333Z"
+            fill="#CACACA"/><path d="M66.7333 247.186C73.913 234.751 89.8144 230.49 102.25 237.67C114.686 244.849 118.946 260.751 111.767 273.186C104.587 285.622 88.6856 289.883 76.25 282.703C63.8144 275.523 59.5536 259.622 66.7333 247.186Z"
+            fill="#CACACA"/><path d="M192.233 29.8138C199.413 17.3782 215.314 13.1175 227.75 20.2972C240.186 27.4769 244.446 43.3782 237.267 55.8138C230.087 68.2495 214.186 72.5102 201.75 65.3305C189.314 58.1508 185.054 42.2495 192.233 29.8138Z"
+            fill="#CACACA"/><path d="M178 26C178 40.3594 166.359 52 152 52C137.641 52 126 40.3594 126 26C126 11.6406 137.641 0 152 0C166.359 0 178 11.6406 178 26Z"
+            fill="black"/><path d="M273.686 191.733C286.122 198.913 290.383 214.814 283.203 227.25C276.023 239.686 259.622 243.946 247.686 236.767C235.251 229.587 230.49 213.686 238.17 201.25C245.349 188.814 261.251 184.554 273.686 191.733Z"
+            fill="black"/><path d="M30.3138 191.733C42.7494 184.554 58.6508 188.814 65.8305 201.25C73.0102 213.686 68.7494 229.587 56.3138 236.767C43.8782 243.946 27.9769 239.686 20.7971 227.25C13.6174 214.814 17.8782 198.913 30.3138 191.733Z"
+            fill="black"
+          />
+        </svg>
+        <label for="triadic">Triadic</label>
+      </button>
+
+            <button class="scheme-btn" data-scheme="split-complementary" disabled>
+        <svg
+          width="303"
+          height="303"
+          viewBox="0 0 303 303"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <!-- split_complementary.svg contents --><path d="M111.267 29.8138C118.446 42.2494 114.186 58.1508 101.75 65.3305C89.3144 72.5102 73.413 68.2494 66.2333 55.8138C59.0536 43.3782 63.3144 27.4769 75.75 20.2971C88.1856 13.1174 104.087 17.3782 111.267 29.8138Z"
+            fill="#CACACA"/><path d="M55.8138 66.2333C68.2494 73.413 72.5102 89.3144 65.3305 101.75C58.1508 114.186 42.2494 118.446 29.8138 111.267C17.3782 104.087 13.1174 88.1856 20.2971 75.75C27.4769 63.3144 43.3782 59.0536 55.8138 66.2333Z"
+            fill="#CACACA"/><path d="M26 125.5C40.3594 125.5 52 137.141 52 151.5C52 165.859 40.3594 177.5 26 177.5C11.6406 177.5 -3.34796e-07 165.859 0 151.5C3.34796e-07 137.141 11.6406 125.5 26 125.5Z"
+            fill="#CACACA"/><path d="M277 125.5C291.359 125.5 303 137.141 303 151.5C303 165.859 291.359 177.5 277 177.5C262.641 177.5 251 165.859 251 151.5C251 137.141 262.641 125.5 277 125.5Z"
+            fill="#CACACA"/><path d="M247.186 66.2333C259.622 59.0536 275.523 63.3144 282.703 75.75C289.883 88.1856 285.622 104.087 273.186 111.267C260.751 118.446 244.849 114.186 237.67 101.75C230.49 89.3144 234.751 73.413 247.186 66.2333Z"
+            fill="#CACACA"/><path d="M191.733 29.8138C198.913 17.3782 214.814 13.1175 227.25 20.2972C239.686 27.4769 243.946 43.3782 236.767 55.8138C229.587 68.2495 213.686 72.5102 201.25 65.3305C188.814 58.1508 184.554 42.2495 191.733 29.8138Z"
+            fill="#CACACA"/><path d="M177.5 26C177.5 40.3594 165.859 52 151.5 52C137.141 52 125.5 40.3594 125.5 26C125.5 11.6406 137.141 0 151.5 0C165.859 0 177.5 11.6406 177.5 26Z"
+            fill="black"/><path d="M29.8138 191.733C42.2494 184.554 58.1508 188.814 65.3305 201.25C72.5102 213.686 68.2494 229.587 55.8138 236.767C43.3782 243.946 27.4769 239.686 20.2971 227.25C13.1174 214.814 17.3782 198.913 29.8138 191.733Z"
+            fill="#CACACA"/><path d="M273.186 191.733C285.622 198.913 289.883 214.814 282.703 227.25C275.523 239.686 259.622 243.946 247.186 236.767C234.751 229.587 230.49 213.686 237.67 201.25C244.849 188.814 260.751 184.554 273.186 191.733Z"
+            fill="#CACACA"/><path d="M177.5 277C177.5 291.359 165.859 303 151.5 303C137.141 303 125.5 291.359 125.5 277C125.5 262.641 137.141 251 151.5 251C165.859 251 177.5 262.641 177.5 277Z"
+            fill="#CACACA"/><path d="M66.2333 247.186C73.413 234.751 89.3144 230.49 101.75 237.67C114.186 244.849 118.446 260.751 111.267 273.186C104.087 285.622 88.1856 289.883 75.75 282.703C63.3144 275.523 59.0536 259.622 66.2333 247.186Z"
+            fill="black"/><path d="M236.767 247.186C243.946 259.622 239.686 275.523 227.25 282.703C214.814 289.883 198.913 285.622 191.733 273.186C184.554 260.751 188.814 244.849 201.25 237.67C213.686 230.49 229.587 234.751 236.767 247.186Z"
+            fill="black"
+          />
+        </svg>
+        <label for="split-complementary">Split Complementary</label>
+      </button>
+
+            <button class="scheme-btn" data-scheme="analogous" disabled>
+        <svg
+          width="303"
+          height="303"
+          viewBox="0 0 303 303"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <!-- analogous.svg contents --><path d="M55.8138 66.2333C68.2494 73.413 72.5102 89.3144 65.3305 101.75C58.1508 114.186 42.2494 118.446 29.8138 111.267C17.3782 104.087 13.1174 88.1856 20.2971 75.75C27.4769 63.3144 43.3782 59.0536 55.8138 66.2333Z"
+            fill="#CACACA"/><path d="M26 125.5C40.3594 125.5 52 137.141 52 151.5C52 165.859 40.3594 177.5 26 177.5C11.6406 177.5 -3.34796e-07 165.859 0 151.5C3.34796e-07 137.141 11.6406 125.5 26 125.5Z"
+            fill="#CACACA"/><path d="M277 125.5C291.359 125.5 303 137.141 303 151.5C303 165.859 291.359 177.5 277 177.5C262.641 177.5 251 165.859 251 151.5C251 137.141 262.641 125.5 277 125.5Z"
+            fill="#CACACA"/><path d="M247.186 66.2333C259.622 59.0536 275.523 63.3144 282.703 75.75C289.883 88.1856 285.622 104.087 273.186 111.267C260.751 118.446 244.849 114.186 237.67 101.75C230.49 89.3144 234.751 73.413 247.186 66.2333Z"
+            fill="#CACACA"/><path d="M177.5 26C177.5 40.3594 165.859 52 151.5 52C137.141 52 125.5 40.3594 125.5 26C125.5 11.6406 137.141 0 151.5 0C165.859 0 177.5 11.6406 177.5 26Z"
+            fill="black"/><path d="M29.8138 191.733C42.2494 184.554 58.1508 188.814 65.3305 201.25C72.5102 213.686 68.2494 229.587 55.8138 236.767C43.3782 243.946 27.4769 239.686 20.2971 227.25C13.1174 214.814 17.3782 198.913 29.8138 191.733Z"
+            fill="#CACACA"/><path d="M273.186 191.733C285.622 198.913 289.883 214.814 282.703 227.25C275.523 239.686 259.622 243.946 247.186 236.767C234.751 229.587 230.49 213.686 237.67 201.25C244.849 188.814 260.751 184.554 273.186 191.733Z"
+            fill="#CACACA"/><path d="M177.5 277C177.5 291.359 165.859 303 151.5 303C137.141 303 125.5 291.359 125.5 277C125.5 262.641 137.141 251 151.5 251C165.859 251 177.5 262.641 177.5 277Z"
+            fill="#CACACA"/><path d="M66.2333 247.186C73.413 234.751 89.3144 230.49 101.75 237.67C114.186 244.849 118.446 260.751 111.267 273.186C104.087 285.622 88.1856 289.883 75.75 282.703C63.3144 275.523 59.0536 259.622 66.2333 247.186Z"
+            fill="#CACACA"/><path d="M236.767 247.186C243.946 259.622 239.686 275.523 227.25 282.703C214.814 289.883 198.913 285.622 191.733 273.186C184.554 260.751 188.814 244.849 201.25 237.67C213.686 230.49 229.587 234.751 236.767 247.186Z"
+            fill="#CACACA"/><path d="M191.733 29.8138C198.913 17.3782 214.814 13.1175 227.25 20.2972C239.686 27.4769 243.946 43.3782 236.767 55.8138C229.587 68.2495 213.686 72.5102 201.25 65.3305C188.814 58.1508 184.554 42.2495 191.733 29.8138Z"
+            fill="black"/><path d="M111.267 29.8138C118.446 42.2494 114.186 58.1508 101.75 65.3305C89.3144 72.5102 73.413 68.2494 66.2333 55.8138C59.0536 43.3782 63.3144 27.4769 75.75 20.2971C88.1856 13.1174 104.087 17.3782 111.267 29.8138Z"
+            fill="black"
+          />
+        </svg>
+        <label for="analogous">Analogous</label>
+      </button>
+        </div>
     </div>
-</div>
 
-<div class="schemes">
-    <button class="scheme-btn" data-scheme="complementary" disabled>
-        <svg width="304" height="303" viewBox="0 0 304 303" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- complementary.svg contents -->
-            <path d="M111.767 29.8138C118.946 42.2494 114.686 58.1508 102.25 65.3305C89.8144 72.5102 73.913 68.2494 66.7333 55.8138C59.5536 43.3782 63.8144 27.4769 76.25 20.2971C88.6856 13.1174 104.587 17.3782 111.767 29.8138Z" fill="#CACACA"/>
-            <path d="M237.267 247.186C244.446 259.622 240.186 275.523 227.75 282.703C215.314 289.883 199.413 285.622 192.233 273.186C185.054 260.751 189.314 244.849 201.75 237.67C214.186 230.49 230.087 234.751 237.267 247.186Z" fill="#CACACA"/>
-            <path d="M56.3138 66.2333C68.7494 73.413 73.0102 89.3144 65.8305 101.75C58.6508 114.186 42.7494 118.446 30.3138 111.267C17.8782 104.087 13.6174 88.1856 20.7971 75.75C27.9769 63.3144 43.8782 59.0536 56.3138 66.2333Z" fill="#CACACA"/>
-            <path d="M26.5 125.5C40.8594 125.5 52.5 137.141 52.5 151.5C52.5 165.859 40.8594 177.5 26.5 177.5C12.1406 177.5 0.5 165.859 0.5 151.5C0.5 137.141 12.1406 125.5 26.5 125.5Z" fill="#CACACA"/>
-            <path d="M277.5 125.5C291.859 125.5 303.5 137.141 303.5 151.5C303.5 165.859 291.859 177.5 277.5 177.5C263.141 177.5 251.5 165.859 251.5 151.5C251.5 137.141 263.141 125.5 277.5 125.5Z" fill="#CACACA"/>
-            <path d="M247.686 66.2333C260.122 59.0536 276.023 63.3144 283.203 75.75C290.383 88.1856 286.122 104.087 273.686 111.267C261.251 118.446 245.349 114.186 238.17 101.75C230.99 89.3144 235.251 73.413 247.686 66.2333Z" fill="#CACACA"/>
-            <path d="M66.7333 247.186C73.913 234.751 89.8144 230.49 102.25 237.67C114.686 244.849 118.946 260.751 111.767 273.186C104.587 285.622 88.6856 289.883 76.25 282.703C63.8144 275.523 59.5536 259.622 66.7333 247.186Z" fill="#CACACA"/>
-            <path d="M192.233 29.8138C199.413 17.3782 215.314 13.1175 227.75 20.2972C240.186 27.4769 244.446 43.3782 237.267 55.8138C230.087 68.2495 214.186 72.5102 201.75 65.3305C189.314 58.1508 185.054 42.2495 192.233 29.8138Z" fill="#CACACA"/>
-            <path d="M178 26C178 40.3594 166.359 52 152 52C137.641 52 126 40.3594 126 26C126 11.6406 137.641 0 152 0C166.359 0 178 11.6406 178 26Z" fill="black"/>
-            <path d="M30.3138 191.733C42.7494 184.554 58.6508 188.814 65.8305 201.25C73.0102 213.686 68.7494 229.587 56.3138 236.767C43.8782 243.946 27.9769 239.686 20.7971 227.25C13.6174 214.814 17.8782 198.913 30.3138 191.733Z" fill="#CACACA"/>
-            <path d="M273.686 191.733C286.122 198.913 290.383 214.814 283.203 227.25C276.023 239.686 259.622 243.946 247.686 236.767C235.251 229.587 230.99 213.686 238.17 201.25C245.349 188.814 261.251 184.554 273.686 191.733Z" fill="#CACACA"/>
-            <path d="M178 277C178 291.359 166.359 303 152 303C137.641 303 126 291.359 126 277C126 262.641 137.641 251 152 251C166.359 251 178 262.641 178 277Z" fill="black"/>
-                  </svg>
-                  <label for="complementary">Complementary</label>
-    </button>
-
-    <button class="scheme-btn" data-scheme="triadic" disabled>
-        <svg width="304" height="303" viewBox="0 0 304 303" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M178 277C178 291.359 166.359 303 152 303C137.641 303 126 291.359 126 277C126 262.641 137.641 251 152 251C166.359 251 178 262.641 178 277Z" fill="#CACACA"/>
-            <path d="M111.767 29.8138C118.946 42.2494 114.686 58.1508 102.25 65.3305C89.8144 72.5102 73.913 68.2494 66.7333 55.8138C59.5536 43.3782 63.8144 27.4769 76.25 20.2971C88.6856 13.1174 104.587 17.3782 111.767 29.8138Z" fill="#CACACA"/>
-            <path d="M237.267 247.186C244.446 259.622 240.186 275.523 227.75 282.703C215.314 289.883 199.413 285.622 192.233 273.186C185.054 260.751 189.314 244.849 201.75 237.67C214.186 230.49 230.087 234.751 237.267 247.186Z" fill="#CACACA"/>
-            <path d="M56.3138 66.2333C68.7494 73.413 73.0102 89.3144 65.8305 101.75C58.6508 114.186 42.7494 118.446 30.3138 111.267C17.8782 104.087 13.6174 88.1856 20.7971 75.75C27.9769 63.3144 43.8782 59.0536 56.3138 66.2333Z" fill="#CACACA"/>
-            <path d="M26.5 125.5C40.8594 125.5 52.5 137.141 52.5 151.5C52.5 165.859 40.8594 177.5 26.5 177.5C12.1406 177.5 0.5 165.859 0.5 151.5C0.5 137.141 12.1406 125.5 26.5 125.5Z" fill="#CACACA"/>
-            <path d="M277.5 125.5C291.859 125.5 303.5 137.141 303.5 151.5C303.5 165.859 291.859 177.5 277.5 177.5C263.141 177.5 251.5 165.859 251.5 151.5C251.5 137.141 263.141 125.5 277.5 125.5Z" fill="#CACACA"/>
-            <path d="M247.686 66.2333C260.122 59.0536 276.023 63.3144 283.203 75.75C290.383 88.1856 286.122 104.087 273.686 111.267C261.251 118.446 245.349 114.186 238.17 101.75C230.99 89.3144 235.251 73.413 247.686 66.2333Z" fill="#CACACA"/>
-            <path d="M66.7333 247.186C73.913 234.751 89.8144 230.49 102.25 237.67C114.686 244.849 118.946 260.751 111.767 273.186C104.587 285.622 88.6856 289.883 76.25 282.703C63.8144 275.523 59.5536 259.622 66.7333 247.186Z" fill="#CACACA"/>
-            <path d="M192.233 29.8138C199.413 17.3782 215.314 13.1175 227.75 20.2972C240.186 27.4769 244.446 43.3782 237.267 55.8138C230.087 68.2495 214.186 72.5102 201.75 65.3305C189.314 58.1508 185.054 42.2495 192.233 29.8138Z" fill="#CACACA"/>
-            <path d="M178 26C178 40.3594 166.359 52 152 52C137.641 52 126 40.3594 126 26C126 11.6406 137.641 0 152 0C166.359 0 178 11.6406 178 26Z" fill="black"/>
-            <path d="M273.686 191.733C286.122 198.913 290.383 214.814 283.203 227.25C276.023 239.686 259.622 243.946 247.686 236.767C235.251 229.587 230.49 213.686 238.17 201.25C245.349 188.814 261.251 184.554 273.686 191.733Z" fill="black"/>
-            <path d="M30.3138 191.733C42.7494 184.554 58.6508 188.814 65.8305 201.25C73.0102 213.686 68.7494 229.587 56.3138 236.767C43.8782 243.946 27.9769 239.686 20.7971 227.25C13.6174 214.814 17.8782 198.913 30.3138 191.733Z" fill="black"/>
-                    </svg>
-                    <label for="triadic">Triadic</label>
-    </button>
-
-    <button class="scheme-btn" data-scheme="split-complementary" disabled>
-        <svg width="303" height="303" viewBox="0 0 303 303" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- split_complementary.svg contents -->
-            <path d="M111.267 29.8138C118.446 42.2494 114.186 58.1508 101.75 65.3305C89.3144 72.5102 73.413 68.2494 66.2333 55.8138C59.0536 43.3782 63.3144 27.4769 75.75 20.2971C88.1856 13.1174 104.087 17.3782 111.267 29.8138Z" fill="#CACACA"/>
-            <path d="M55.8138 66.2333C68.2494 73.413 72.5102 89.3144 65.3305 101.75C58.1508 114.186 42.2494 118.446 29.8138 111.267C17.3782 104.087 13.1174 88.1856 20.2971 75.75C27.4769 63.3144 43.3782 59.0536 55.8138 66.2333Z" fill="#CACACA"/>
-            <path d="M26 125.5C40.3594 125.5 52 137.141 52 151.5C52 165.859 40.3594 177.5 26 177.5C11.6406 177.5 -3.34796e-07 165.859 0 151.5C3.34796e-07 137.141 11.6406 125.5 26 125.5Z" fill="#CACACA"/>
-            <path d="M277 125.5C291.359 125.5 303 137.141 303 151.5C303 165.859 291.359 177.5 277 177.5C262.641 177.5 251 165.859 251 151.5C251 137.141 262.641 125.5 277 125.5Z" fill="#CACACA"/>
-            <path d="M247.186 66.2333C259.622 59.0536 275.523 63.3144 282.703 75.75C289.883 88.1856 285.622 104.087 273.186 111.267C260.751 118.446 244.849 114.186 237.67 101.75C230.49 89.3144 234.751 73.413 247.186 66.2333Z" fill="#CACACA"/>
-            <path d="M191.733 29.8138C198.913 17.3782 214.814 13.1175 227.25 20.2972C239.686 27.4769 243.946 43.3782 236.767 55.8138C229.587 68.2495 213.686 72.5102 201.25 65.3305C188.814 58.1508 184.554 42.2495 191.733 29.8138Z" fill="#CACACA"/>
-            <path d="M177.5 26C177.5 40.3594 165.859 52 151.5 52C137.141 52 125.5 40.3594 125.5 26C125.5 11.6406 137.141 0 151.5 0C165.859 0 177.5 11.6406 177.5 26Z" fill="black"/>
-            <path d="M29.8138 191.733C42.2494 184.554 58.1508 188.814 65.3305 201.25C72.5102 213.686 68.2494 229.587 55.8138 236.767C43.3782 243.946 27.4769 239.686 20.2971 227.25C13.1174 214.814 17.3782 198.913 29.8138 191.733Z" fill="#CACACA"/>
-            <path d="M273.186 191.733C285.622 198.913 289.883 214.814 282.703 227.25C275.523 239.686 259.622 243.946 247.186 236.767C234.751 229.587 230.49 213.686 237.67 201.25C244.849 188.814 260.751 184.554 273.186 191.733Z" fill="#CACACA"/>
-            <path d="M177.5 277C177.5 291.359 165.859 303 151.5 303C137.141 303 125.5 291.359 125.5 277C125.5 262.641 137.141 251 151.5 251C165.859 251 177.5 262.641 177.5 277Z" fill="#CACACA"/>
-            <path d="M66.2333 247.186C73.413 234.751 89.3144 230.49 101.75 237.67C114.186 244.849 118.446 260.751 111.267 273.186C104.087 285.622 88.1856 289.883 75.75 282.703C63.3144 275.523 59.0536 259.622 66.2333 247.186Z" fill="black"/>
-            <path d="M236.767 247.186C243.946 259.622 239.686 275.523 227.25 282.703C214.814 289.883 198.913 285.622 191.733 273.186C184.554 260.751 188.814 244.849 201.25 237.67C213.686 230.49 229.587 234.751 236.767 247.186Z" fill="black"/>
-                </svg>
-                <label for="split-complementary">Split Complementary</label>
-    </button>
-
-    <button class="scheme-btn" data-scheme="analogous" disabled>
-        <svg width="303" height="303" viewBox="0 0 303 303" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- analogous.svg contents -->
-            <path d="M55.8138 66.2333C68.2494 73.413 72.5102 89.3144 65.3305 101.75C58.1508 114.186 42.2494 118.446 29.8138 111.267C17.3782 104.087 13.1174 88.1856 20.2971 75.75C27.4769 63.3144 43.3782 59.0536 55.8138 66.2333Z" fill="#CACACA"/>
-            <path d="M26 125.5C40.3594 125.5 52 137.141 52 151.5C52 165.859 40.3594 177.5 26 177.5C11.6406 177.5 -3.34796e-07 165.859 0 151.5C3.34796e-07 137.141 11.6406 125.5 26 125.5Z" fill="#CACACA"/>
-            <path d="M277 125.5C291.359 125.5 303 137.141 303 151.5C303 165.859 291.359 177.5 277 177.5C262.641 177.5 251 165.859 251 151.5C251 137.141 262.641 125.5 277 125.5Z" fill="#CACACA"/>
-            <path d="M247.186 66.2333C259.622 59.0536 275.523 63.3144 282.703 75.75C289.883 88.1856 285.622 104.087 273.186 111.267C260.751 118.446 244.849 114.186 237.67 101.75C230.49 89.3144 234.751 73.413 247.186 66.2333Z" fill="#CACACA"/>
-            <path d="M177.5 26C177.5 40.3594 165.859 52 151.5 52C137.141 52 125.5 40.3594 125.5 26C125.5 11.6406 137.141 0 151.5 0C165.859 0 177.5 11.6406 177.5 26Z" fill="black"/>
-            <path d="M29.8138 191.733C42.2494 184.554 58.1508 188.814 65.3305 201.25C72.5102 213.686 68.2494 229.587 55.8138 236.767C43.3782 243.946 27.4769 239.686 20.2971 227.25C13.1174 214.814 17.3782 198.913 29.8138 191.733Z" fill="#CACACA"/>
-            <path d="M273.186 191.733C285.622 198.913 289.883 214.814 282.703 227.25C275.523 239.686 259.622 243.946 247.186 236.767C234.751 229.587 230.49 213.686 237.67 201.25C244.849 188.814 260.751 184.554 273.186 191.733Z" fill="#CACACA"/>
-            <path d="M177.5 277C177.5 291.359 165.859 303 151.5 303C137.141 303 125.5 291.359 125.5 277C125.5 262.641 137.141 251 151.5 251C165.859 251 177.5 262.641 177.5 277Z" fill="#CACACA"/>
-            <path d="M66.2333 247.186C73.413 234.751 89.3144 230.49 101.75 237.67C114.186 244.849 118.446 260.751 111.267 273.186C104.087 285.622 88.1856 289.883 75.75 282.703C63.3144 275.523 59.0536 259.622 66.2333 247.186Z" fill="#CACACA"/>
-            <path d="M236.767 247.186C243.946 259.622 239.686 275.523 227.25 282.703C214.814 289.883 198.913 285.622 191.733 273.186C184.554 260.751 188.814 244.849 201.25 237.67C213.686 230.49 229.587 234.751 236.767 247.186Z" fill="#CACACA"/>
-            <path d="M191.733 29.8138C198.913 17.3782 214.814 13.1175 227.25 20.2972C239.686 27.4769 243.946 43.3782 236.767 55.8138C229.587 68.2495 213.686 72.5102 201.25 65.3305C188.814 58.1508 184.554 42.2495 191.733 29.8138Z" fill="black"/>
-            <path d="M111.267 29.8138C118.446 42.2494 114.186 58.1508 101.75 65.3305C89.3144 72.5102 73.413 68.2494 66.2333 55.8138C59.0536 43.3782 63.3144 27.4769 75.75 20.2971C88.1856 13.1174 104.087 17.3782 111.267 29.8138Z" fill="black"/>
-             </svg>
-             <label for="analogous">Analogous</label>
-    </button>
-</div>
-
-<div class="steps">
     <div class="step">
-        <div class="step-header">3. Create Color Scheme</div>
+        <button class="generate-btn" data-action="shapes" disabled>
+        Generate Swatches
+      </button>
     </div>
 </div>
-
-<button class="generate-btn" data-action="shapes" disabled>Generate Swatches</button>
 
 <script>
     let selectedColor = null;
     let selectedScheme = null;
 
-    document.querySelectorAll('.color-swatch').forEach(swatch => {
-        swatch.addEventListener('click', () => {
+    document.querySelectorAll(".color-swatch").forEach((swatch) => {
+        swatch.addEventListener("click", () => {
             // Remove previous selection
-            const previousSelected = document.querySelector('.selected');
+            const previousSelected = document.querySelector(".selected");
             if (previousSelected) {
-                previousSelected.classList.remove('selected');
+                previousSelected.classList.remove("selected");
             }
 
             // Reset all swatches to dimmed
-            document.querySelectorAll('.color-swatch').forEach(s => {
-                s.classList.add('dimmed');
-                s.classList.remove('scheme-color');
+            document.querySelectorAll(".color-swatch").forEach((s) => {
+                s.classList.add("dimmed");
+                s.classList.remove("scheme-color");
             });
 
             // Add selection to clicked swatch
-            swatch.classList.add('selected');
-            swatch.classList.remove('dimmed');
+            swatch.classList.add("selected");
+            swatch.classList.remove("dimmed");
 
             // Store selected color
             selectedColor = swatch.dataset.color;
 
             // Enable scheme buttons
-            document.querySelectorAll('.scheme-btn').forEach(btn => {
+            document.querySelectorAll(".scheme-btn").forEach((btn) => {
                 btn.disabled = false;
             });
 
             // Disable generate buttons until scheme is selected
-            document.querySelectorAll('.generate-btn').forEach(btn => {
+            document.querySelectorAll(".generate-btn").forEach((btn) => {
                 btn.disabled = true;
             });
 
@@ -404,53 +434,58 @@
         });
     });
 
-    document.querySelectorAll('.scheme-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
+    document.querySelectorAll(".scheme-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
             if (!selectedColor) return;
 
             // Remove selected state from all scheme buttons
-            document.querySelectorAll('.scheme-btn').forEach(b => b.classList.remove('selected'));
+            document
+                .querySelectorAll(".scheme-btn")
+                .forEach((b) => b.classList.remove("selected"));
 
             // Add selected state to clicked button
-            btn.classList.add('selected');
+            btn.classList.add("selected");
 
             selectedScheme = btn.dataset.scheme;
 
             // Reset all swatches to dimmed
-            document.querySelectorAll('.color-swatch').forEach(s => {
-                s.classList.add('dimmed');
-                s.classList.remove('scheme-color');
+            document.querySelectorAll(".color-swatch").forEach((s) => {
+                s.classList.add("dimmed");
+                s.classList.remove("scheme-color");
             });
 
             // Highlight the selected color and scheme colors
-            const baseIndex = Array.from(document.querySelectorAll('.color-swatch'))
-                .findIndex(swatch => swatch.dataset.color === selectedColor);
+            const baseIndex = Array.from(
+                document.querySelectorAll(".color-swatch")
+            ).findIndex((swatch) => swatch.dataset.color === selectedColor);
 
             const schemeIndices = getSchemeIndices(baseIndex, selectedScheme);
-            schemeIndices.forEach(index => {
-                const swatch = document.querySelectorAll('.color-swatch')[index];
-                swatch.classList.remove('dimmed');
-                swatch.classList.add('scheme-color');
+            schemeIndices.forEach((index) => {
+                const swatch = document.querySelectorAll(".color-swatch")[index];
+                swatch.classList.remove("dimmed");
+                swatch.classList.add("scheme-color");
             });
 
             // Enable generate buttons
-            document.querySelectorAll('.generate-btn').forEach(btn => {
+            document.querySelectorAll(".generate-btn").forEach((btn) => {
                 btn.disabled = false;
             });
         });
     });
 
-    document.querySelector('.generate-btn').addEventListener('click', () => {
+    document.querySelector(".generate-btn").addEventListener("click", () => {
         if (!selectedColor || !selectedScheme) return;
 
         parent.postMessage({
-            pluginMessage: {
-                type: 'create-color-scheme',
-                baseColor: selectedColor,
-                scheme: selectedScheme,
-                action: 'shapes'
-            }
-        }, '*');
+                pluginMessage: {
+                    type: "create-color-scheme",
+                    baseColor: selectedColor,
+                    scheme: selectedScheme,
+                    action: "shapes",
+                },
+            },
+            "*"
+        );
 
         // Reset everything after creating shapes
         resetUI();
@@ -462,48 +497,38 @@
         selectedScheme = null;
 
         // Remove selection from color swatches
-        document.querySelectorAll('.color-swatch').forEach(swatch => {
-            swatch.classList.remove('selected', 'dimmed', 'scheme-color');
+        document.querySelectorAll(".color-swatch").forEach((swatch) => {
+            swatch.classList.remove("selected", "dimmed", "scheme-color");
         });
 
         // Remove selection and disable scheme buttons
-        document.querySelectorAll('.scheme-btn').forEach(btn => {
-            btn.classList.remove('selected');
+        document.querySelectorAll(".scheme-btn").forEach((btn) => {
+            btn.classList.remove("selected");
             btn.disabled = true;
         });
 
         // Disable generate button
-        document.querySelector('.generate-btn').disabled = true;
+        document.querySelector(".generate-btn").disabled = true;
     }
 
     function getSchemeIndices(baseIndex, scheme) {
         const total = 12;
         switch (scheme) {
-            case 'complementary':
-                return [
-                    baseIndex,
-                    (baseIndex + 6) % total
-                ];
-            case 'triadic':
-                return [
-                    baseIndex,
-                    (baseIndex + 4) % total,
-                    (baseIndex + 8) % total
-                ];
-            case 'split-complementary':
-                return [
-                    baseIndex,
-                    (baseIndex + 5) % total,
-                    (baseIndex + 7) % total
-                ];
-            case 'analogous':
+            case "complementary":
+                return [baseIndex, (baseIndex + 6) % total];
+            case "triadic":
+                return [baseIndex, (baseIndex + 4) % total, (baseIndex + 8) % total];
+            case "split-complementary":
+                return [baseIndex, (baseIndex + 5) % total, (baseIndex + 7) % total];
+            case "analogous":
                 return [
                     (baseIndex - 1 + total) % total,
                     baseIndex,
-                    (baseIndex + 1) % total
+                    (baseIndex + 1) % total,
                 ];
             default:
                 return [baseIndex];
         }
     }
 </script>
+</div>

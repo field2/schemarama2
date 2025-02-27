@@ -27,5 +27,13 @@
             "label": "JavaScript",
             "value": "javascript"
         }
-    ]
+    ],
+    "description": "A color scheme generator that creates harmonious color palettes",
+    "author": "Your Name",
+    "website": "https://your-website.com",
+    "repository": "https://github.com/yourusername/schemarama",
+    "version": "1.0.0",
+    "homepage": "https://your-website.com/schemarama",
+    "keywords": ["color", "palette", "scheme", "generator", "design"],
+    "license": "MIT"
 }
